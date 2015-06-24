@@ -2,6 +2,7 @@ package net.cubespace.stream.whitelist;
 
 import lombok.Getter;
 import net.cubespace.Yamler.Config.InvalidConfigurationException;
+import net.cubespace.stream.whitelist.command.WhitelistCommand;
 import net.cubespace.stream.whitelist.config.MySQLConfig;
 import net.cubespace.stream.whitelist.entity.WhitelistEntityManager;
 import net.cubespace.stream.whitelist.listener.PlayerLoginListener;
@@ -47,6 +48,9 @@ public class Whitelist extends Plugin {
 
         // Register listener
         getProxy().getPluginManager().registerListener( this, new PlayerLoginListener() );
+
+        // Register command
+        getProxy().getPluginManager().registerCommand( this, new WhitelistCommand() );
     }
 
     private void createDatabasePool( MySQLConfig mySQLConfig ) {
