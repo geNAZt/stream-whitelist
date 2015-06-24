@@ -1,0 +1,5 @@
+name: Whitelist
+main: net.cubespace.stream.whitelist.Whitelist
+version: 1.0
+author: geNAZt
+depends: [Yamler]
